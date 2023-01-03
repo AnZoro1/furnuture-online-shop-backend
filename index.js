@@ -11,7 +11,8 @@ app.use(cors())
 app.use(morgan('dev'))
 
 app.use(require('./routes/users.route'))
-app.use(require('./routes/photo.route'))
+
+app.use(require('./routes/products.route'))
 
 const { PORT, MONGO_SERVER } = process.env
 
