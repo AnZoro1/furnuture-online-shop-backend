@@ -14,6 +14,8 @@ app.use(require('./routes/users.route'))
 
 app.use(require('./routes/products.route'))
 
+app.use(require('./routes/baskets.route'))
+
 const { PORT, MONGO_SERVER } = process.env
 
 const connectAndStartServer = async () => {
