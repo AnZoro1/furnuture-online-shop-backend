@@ -38,5 +38,15 @@ const ProductController = {
       res.json({ error: err.message })
     }
   },
+  deleteProduct: async (req, res) => {
+    try {
+      const products = await Product.findByIdAndRemove(req.params.id, {
+        new: true,
+      })
+      res.json(products)
+    } catch (err) {
+      return res.json({ error: err.message })
+    }
+  },
 }
 module.exports = ProductController
