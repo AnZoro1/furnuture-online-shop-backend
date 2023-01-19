@@ -4,8 +4,12 @@ var jwt = require('jsonwebtoken')
 
 const UserController = {
   getAllUsers: async (req, res) => {
-    const users = await User.find()
-    res.json(users)
+    try {
+      const users = await User.find()
+      res.json(users)
+    } catch (err) {
+      res.json({error: err.message})
+    }
   },
   registerUsers: async (req, res) => {
     try {
