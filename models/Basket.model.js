@@ -6,7 +6,7 @@ const BasketSchema = mongoose.Schema({
     type: String,
     default: '',
   },
-  price: String,
+  price: Number,
 })
 
 const Basket = mongoose.model('Basket', BasketSchema)

@@ -8,7 +8,7 @@ const UserController = {
       const users = await User.find()
       res.json(users)
     } catch (err) {
-      res.json({error: err.message})
+      res.json({ error: err.message })
     }
   },
   registerUsers: async (req, res) => {
@@ -50,6 +50,18 @@ const UserController = {
     })
 
     res.json(token)
+  },
+
+  deleteUsers: async (req, res) => {
+    try {
+      const users = await User.findByIdAndRemove(req.params.id, {
+        new: true,
+      })
+
+      res.json(users)
+    } catch (err) {
+      return res.json({ error: err.message })
+    }
   },
 }
 

@@ -22,6 +22,7 @@ const ProductController = {
         name: req.body.name,
         price: req.body.price,
         imageSrc: req.file ? req.file.path : '',
+        countProd: req.body.countProd,
       })
 
       await product.save()

@@ -6,5 +6,6 @@ const router = Router()
 router.get('/users', authMiddleware, UserController.getAllUsers)
 router.post('/auth', UserController.registerUsers)
 router.post('/login', UserController.login)
+router.delete('/users/:id', UserController.deleteUsers)
 
 module.exports = router
