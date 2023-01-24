@@ -7,7 +7,7 @@ const ProductSchema = mongoose.Schema({
     default: '',
   },
   price: Number,
-  countProd: Number
+  countProd: Number,
 })
 const Product = mongoose.model('Product', ProductSchema)
 

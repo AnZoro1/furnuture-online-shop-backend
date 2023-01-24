@@ -7,6 +7,7 @@ const BasketController = {
         name: req.body.name,
         price: req.body.price,
         imageSrc: req.body.image,
+        countProd: req.body.countProd,
       })
 
       await products.save()
@@ -31,7 +32,7 @@ const BasketController = {
       })
       res.json(products)
     } catch (err) {
-      return res.json({error: err.message})
+      return res.json({ error: err.message })
     }
   },
 }
